@@ -5,7 +5,7 @@ import { X } from 'lucide-react'
 const FOCUSABLE =
   'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
 
-export default function Modal({ open, onClose, title, subtitle, children }) {
+export default function Modal({ open, onClose, title, subtitle, eyebrow = 'ติดต่อสอบถาม', children }) {
   const dialogRef = useRef(null)
   const titleId = useId()
   const subtitleId = useId()
@@ -76,7 +76,7 @@ export default function Modal({ open, onClose, title, subtitle, children }) {
           <X size={20} aria-hidden="true" />
         </button>
         <header className="modal__head">
-          <p className="eyebrow eyebrow--red">ติดต่อสอบถาม</p>
+          <p className="eyebrow eyebrow--red">{eyebrow}</p>
           <h2 id={titleId}>{title}</h2>
           {subtitle && <p id={subtitleId} className="modal__subtitle">{subtitle}</p>}
         </header>

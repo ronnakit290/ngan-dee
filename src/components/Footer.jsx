@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowUpRight, Check, Facebook, Instagram, Mail, Phone, Send } from 'lucide-react'
 import Logo from './Logo'
+import { useAuth } from '../context/AuthContext'
 
 const footerColumns = [
   {
@@ -23,17 +24,19 @@ const footerColumns = [
     ],
   },
   {
-    title: 'งานดี',
+    title: 'สำหรับผู้จัดงาน',
     links: [
-      { label: 'เกี่ยวกับเรา', to: '/about' },
+      { label: 'แดชบอร์ด', to: '/dashboard' },
       { label: 'ลงประกาศงาน', to: '/post' },
-      { label: 'งานที่บันทึกไว้', to: '/events?saved=1' },
-      { label: 'ติดต่อทีมงาน', to: '/about#contact' },
+      { label: 'แพ็กเกจราคา', to: '/pricing' },
+      { label: 'ศูนย์ช่วยเหลือ', to: '/help' },
+      { label: 'เกี่ยวกับเรา', to: '/about' },
     ],
   },
 ]
 
 export default function Footer() {
+  const { user } = useAuth()
   const [email, setEmail] = useState('')
   const [subscribed, setSubscribed] = useState(false)
 
@@ -72,11 +75,17 @@ export default function Footer() {
               <div key={column.title} className="footer__column">
                 <h3>{column.title}</h3>
                 <ul>
-                  {column.links.map((link) => (
-                    <li key={link.label}>
-                      <Link to={link.to}>{link.label}</Link>
-                    </li>
-                  ))}
+                  {column.links.map((link) => {
+                    const resolved =
+                      link.to === '/dashboard' && !user
+                        ? { label: 'เข้าสู่ระบบ', to: '/login' }
+                        : link
+                    return (
+                      <li key={link.label}>
+                        <Link to={resolved.to}>{resolved.label}</Link>
+                      </li>
+                    )
+                  })}
                 </ul>
               </div>
             ))}

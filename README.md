@@ -15,8 +15,16 @@ A modern, minimal event-discovery and space-marketplace website in Thai. Built w
 - **Post an announcement** — a working mock form for events or spaces with client-side validation.
 - **Save favourites** — persisted in `localStorage`.
 - **Contact flow** — booking/enquiry modal with validation and a mock success reference.
+- **Mock auth** — register, login, forgot-password, remember-me and protected routes.
+- **Organizer dashboard** — overview stats, visitor chart, event/space management, inquiry inbox, favourites and settings.
+- **Pricing & help centre** — public plan comparison and a searchable FAQ.
 
-All data is mock data in `src/data/`.
+All data is mock data in `src/data/`. Auth accounts and dashboard changes are kept in the
+browser’s `localStorage`, so the demo survives reloads without a backend.
+
+### Organizer dashboard
+
+![งานดี dashboard preview](docs/dashboard-preview.jpg)
 
 ## Pages
 
@@ -29,6 +37,17 @@ All data is mock data in `src/data/`.
 | `/spaces/:slug` | Space detail — facts, amenities, host, map, enquiry modal |
 | `/post` | Post an event or space (mock submission with validation) |
 | `/about` | About and contact |
+| `/pricing` | Plan comparison (monthly/yearly toggle) |
+| `/help` | Searchable help centre and FAQ |
+| `/login` | Mock login with demo account |
+| `/register` | Mock registration with validation and password strength |
+| `/forgot-password` | Mock password-reset flow |
+| `/dashboard` | Protected organizer overview — stats, chart, recent activity |
+| `/dashboard/events` | Event management — filter, pause/publish, delete |
+| `/dashboard/spaces` | Space management with publish controls |
+| `/dashboard/inquiries` | Inquiry inbox with reply flow |
+| `/dashboard/favorites` | Saved events |
+| `/dashboard/settings` | Profile, notification preferences, demo reset |
 | `*` | Custom 404 |
 
 ## Stack
@@ -38,6 +57,19 @@ All data is mock data in `src/data/`.
 - **lucide-react** icons
 - Plain CSS design system in `src/styles.css` — no UI framework
 - Fonts: **Anuphan** + **Bai Jamjuree** (Google Fonts)
+
+## Demo account
+
+Use the **“ใช้บัญชีนี้”** button on the login page, or sign in with:
+
+| Field | Value |
+| --- | --- |
+| Email | `demo@ngandee.th` |
+| Password | `demo1234` |
+
+Registration also works and creates an account in the same browser. Passwords are stored
+in plain text in `localStorage` because this is a front-end-only demo — never do this in a
+real application.
 
 ## Run locally
 
