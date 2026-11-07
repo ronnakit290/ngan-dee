@@ -55,7 +55,7 @@ browser’s `localStorage`, so the demo survives reloads without a backend.
 - **Vite 6** + **React 19**
 - **React Router 7** (browser router, base-path aware)
 - **lucide-react** icons
-- Plain CSS design system in `src/styles.css` — no UI framework
+- Plain CSS design system in `src/styles.css` + workspace styles in `src/styles-extra.css` — no UI framework
 - Fonts: **Anuphan** + **Bai Jamjuree** (Google Fonts)
 
 ## Demo account
