@@ -4,6 +4,7 @@
    ========================================================= */
 
 :root {
+  color-scheme: light;
   --red: #d32f2f;
   --red-deep: #b71c1c;
   --red-soft: #fdecec;
