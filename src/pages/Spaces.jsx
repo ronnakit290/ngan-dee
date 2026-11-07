@@ -57,8 +57,8 @@ export default function Spaces() {
           </div>
           <div className="page-head__aside page-head__aside--light">
             <Building2 size={22} aria-hidden="true" />
-            <p><strong>{spaces.length}</strong> พื้นที่ในระบบ</p>
-            <p><strong>45</strong> จังหวัด</p>
+            <p><strong>{spaces.length}</strong> พื้นที่ที่คัดสรร</p>
+            <p><strong>{spaceProvinces.length - 1}</strong> จังหวัดในประกาศนี้</p>
             <Link to="/post?tab=space" className="link-arrow">
               ลงประกาศพื้นที่ <ArrowUpRight size={16} aria-hidden="true" />
             </Link>

@@ -78,8 +78,8 @@ export default function Events() {
             </p>
           </div>
           <div className="page-head__aside">
-            <p><strong>{events.length}</strong> งานในระบบ</p>
-            <p><strong>{provinces.length - 1}</strong> จังหวัด</p>
+            <p><strong>{events.length}</strong> งานที่คัดสรร</p>
+            <p><strong>{provinces.length - 1}</strong> จังหวัดในประกาศนี้</p>
             <p><strong>{favorites.length}</strong> งานที่บันทึก</p>
           </div>
         </div>
